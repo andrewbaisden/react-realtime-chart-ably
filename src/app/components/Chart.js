@@ -13,7 +13,7 @@ export default function Header() {
   const [errorProductSale, setErrorProductSale] = useState('hidden');
   const [errorLoadData, setErrorLoadData] = useState('hidden');
   const [messages, updateMessages] = useState([]);
-  const { channel } = useChannel('channel-02', (message) => {
+  const { channel } = useChannel('channel-01', (message) => {
     updateMessages((prev) => [...prev, message]);
   });
 
@@ -36,6 +36,7 @@ export default function Header() {
       setItemSales('');
       setFormInputCheck('');
       setErrorProductSale('hidden');
+      setErrorLoadData('hidden');
       channel.history(function (err, resultPage) {
         let allMessages = resultPage.items;
         console.log('All Messages', allMessages);
