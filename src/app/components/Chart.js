@@ -81,7 +81,7 @@ export default function Header() {
   return (
     <div className="p-4">
       <HighchartsReact highcharts={Highcharts} options={options} />
-      <div className="grid gap-2 grid-cols-2">
+      <div className="grid gap-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
         <form
           className="flex flex-row bg-sky-500 p-4 justify-center"
           onSubmit={(e) => addProductSale(e)}
