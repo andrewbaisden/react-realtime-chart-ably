@@ -2,10 +2,10 @@
 import * as Ably from 'ably';
 import { AblyProvider } from 'ably/react';
 import Chart from './components/Chart';
-import { NEXT_PUBLIC_API_KEY } from './config/appConfig';
+import { ChartProvider } from '../app/Context/ChartContext';
 
 const client = {
-  key: NEXT_PUBLIC_API_KEY,
+  key: process.env.NEXT_PUBLIC_API_KEY,
   clientId: 'gcLqBA',
 };
 
@@ -15,7 +15,9 @@ export default function Home() {
   return (
     <>
       <AblyProvider client={ably}>
-        <Chart />
+        <ChartProvider>
+          <Chart />
+        </ChartProvider>
       </AblyProvider>
     </>
   );
