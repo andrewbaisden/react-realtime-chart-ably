@@ -6,7 +6,7 @@ import AddProductSaleForm from './AddProductSaleForm';
 import LoadChartDataForm from './LoadChartDataForm';
 import ChartTable from './ChartTable';
 
-export default function Header() {
+export default function Chart() {
   const { messages, chartData } = useContext(ChartContext);
 
   useEffect(() => {
