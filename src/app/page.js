@@ -4,17 +4,12 @@ import { AblyProvider } from 'ably/react';
 import Chart from './components/Chart';
 import { ChartProvider } from '../app/Context/ChartContext';
 
-const client = {
-  key: process.env.NEXT_PUBLIC_API_KEY,
-  clientId: 'gcLqBA',
-};
-
-const ably = new Ably.Realtime.Promise(client);
+const client = new Ably.Realtime.Promise({ authUrl: '/api/ably/' });
 
 export default function Home() {
   return (
     <>
-      <AblyProvider client={ably}>
+      <AblyProvider client={client}>
         <ChartProvider>
           <Chart />
         </ChartProvider>
