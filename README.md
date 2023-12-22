@@ -13,7 +13,7 @@ Sign up and create a free account on [Ably](https://ably.com/) and then get your
 Add this key value pair to the `.env` file with your Ably API key
 
 ```shell
-NEXT_PUBLIC_API_KEY="put your API key here"
+NEXT_ABLY_API_KEY="put your API key here"
 ```
 
 4. Start the app with this run command `npm run dev`
